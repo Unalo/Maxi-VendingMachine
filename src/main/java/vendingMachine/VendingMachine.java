@@ -25,14 +25,18 @@ public class VendingMachine {
         }
     }
 
-    public void getStock(Product product) {
+    public int getStock(Product product) {
         if (product instanceof SoftSDrink) {
             System.out.println("we have " + stockSoftDrink + " soft drinks available") ;
+            return stockChocolate;
         } else if (product instanceof Chocolate) {
             System.out.println("we have " + stockChocolate + " chocolates available");
+            return stockChocolate;
         } else if (product instanceof SaltySnack) {
             System.out.println("we have " + stockSaltySnacks + " salty snakes available");
+            return stockSaltySnacks;
         }
+        return 0;
     }
 
     public  void buy(Product product) throws ProductNotFoundException {
